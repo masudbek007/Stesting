@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Nashirlar</title>
+</head>
+<body>
+
+    <header class="fixed z-50 top-0 w-[100%] bg-white shadow-sm" id="header">
+        <div class="container lg:max-w-[1024px] mx-auto">
+            <div class="bg-image-middle mx-5 py-5 flex items-center justify-between">
+                <div class="flex gap-1 items-center">
+                    <div class="w-[35px] lg:hidden cursor-pointer" id="hamburger-menu">
+                        <img src="./img/hamburger-menu.svg" alt="menu">
+                    </div>
+                    <a href="./index.htm">
+                        <img class="mr-5" src="https://qlapi.stesting.uz/media/Logo/Group_18754.png" alt="STesting">
+                    </a>
+                </div>
+                <ul class="hidden lg:flex gap-5 text-center pt-5 pb-3 bg-image-middle transition">
+                    <li class="header_text transition">
+                        <a href="./department.htm">Yo'riqnoma</a>
+                    </li>
+                    <li class="header_text transition">
+                        <a href="./nashr.htm">Nashirlar</a>
+                    </li>
+                    <li class="header_text transition">
+                        <a href="./guide.htm">Videodarslar</a>
+                    </li>
+                    <li class="header_text transition">
+                        <a href="./research.htm">Tadqiqotlar</a>
+                    </li>
+                    <li class="header_text transition">
+                        <a href="./about.htm">STesting haqida</a>
+                    </li>
+                    <select class="header_select ml-5 transition">
+                        <option value="uz">O'zbekcha</option>
+                        <option value="ru">Ruscha</option>
+                        <option value="eng">Ingilizcha</option>
+                    </select>
+                </ul>
+                <a href="https://cabinet.stesting.uz/login">
+                    <button class="bg-blue-600 px-[50px] ml-5 transition hover:bg-blue-700 rounded-sm text-white py-2">Kirish</button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div id="sidebar" class="fixed top-0 right-0 h-full bg-white shadow-lg transform translate-x-full transition-transform lg:hidden z-50">
+        <div class="p-5">
+            <ul class="space-y-5">
+                <li class="relative font-semibold transition-transform duration-300">
+                    <a href="./department.htm" class="hover-underline text-gray-800 hover:text-[#2a5ddd]">Yo'riqnoma</a>
+                </li>
+                <li class="relative font-semibold transition-transform duration-300">
+                    <a href="./nashr.htm" class="hover-underline text-gray-800 hover:text-[#2a5ddd]">Nashirlar</a>
+                </li>
+                <li class="relative font-semibold transition-transform duration-300">
+                    <a href="./guide.htm" class="hover-underline text-gray-800 hover:text-[#2a5ddd]">Videodarslar</a>
+                </li>
+                <li class="relative font-semibold transition-transform duration-300">
+                    <a href="./research.htm" class="hover-underline text-gray-800 hover:text-[#2a5ddd]">Tadqiqotlar</a>
+                </li>
+                <li class="relative font-semibold transition-transform duration-300">
+                    <a href="./about.htm" class="hover-underline text-gray-800 hover:text-[#2a5ddd]">STesting haqida</a>
+                </li>
+                <select class="header_select ml-5 transition mb-5 mt-5 font-semibold">
+                    <option value="uz">O'zbekcha</option>
+                    <option value="ru">Ruscha</option>
+                    <option value="eng">Ingilizcha</option>
+                </select>
+            </ul>
+        </div>
+    </div>
+<main>
+    <div class="container max-w-[1024px] mx-auto">
+        <div class="bg-[#f8fbff] mx-auto mt-5 shadow-lg p-5 lg:block">
+            <h2 class="text-4xl text-slate-800 mt-10 font-bold">
+                Nashirlar
+            </h2>
+            <div class="block lg:flex justify-between items-center mt-10">
+                <div class="block lg:flex gap-3">
+                    <button id="internationalBtn" class="bg-blue-500 block mt-3 w-full lg:px-[50px] transition hover:bg-blue-400 rounded-sm text-white py-2">
+                        Xalqaro
+                    </button>
+                    <button id="nationalBtn" class="bg-sky-100 w-full mt-3 lg:px-[50px] border-spacing-1 transition hover:bg-sky-200 rounded-sm text-sky-500 py-2">
+                        Milliy
+                    </button>
+                </div>
+                <div class="block">
+                    <select class="Nashr_selekt block py-2 w-full text-center mt-5 outline-none lg:mt-5 px-2">
+                    </select>
+                </div>
+            </div>
+          </div>
+          <div class="box-list"></div>
+          <div class="pagination-list mt-5"></div>
+          <div class="animation hidden">Yuklanmoqda...</div>
+        </div>
+</main>
+
+
+<footer>
+    <div  class=" container bg-slate-900 bg-cover  w-full py-[44px] block lg:flex justify-between items-center mx-auto  ">
+      
+      <div class="block  mx-auto lg:flex flex-row-reverse  max-w-[1024px] mx-auto">
+        <div class="h-auto  mt-5  lg:w-full">
+            <iframe class="w-full h-full mr-1 " src="https://www.google.com/maps/embed?pb=%211m18%211m12%211m3%211d8230.088482517118%212d69.2151844432266%213d41.35151196558349%212m3%211f0%212f0%213f0%213m2%211i1024%212i768%214f13.1%213m3%211m2%211s0x38ae8d2591d6b177%3A0xd29b1293b6d665b3%212sAbdulla+Avloniy+nomidagi+Ilmiy-tadqiqot+instituti%215e0%213m2%211sen%212s%214v1631164861762%215m2%211sen%212s" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div>
+            <div class="mt-8">
+                <p class="text-gray-500 text-sm">Manzil</p>
+                <h3 class="text-lg lg:text-2xl font-bold text-white">
+                    Toshkent shahri, Olmazor tumani, Ziyo koʻchasi, 6 uy
+                </h3>
+            </div>
+               <div class="flex items-center justify-between mx-1 lg:block ">
+                   <div class="mt-10 ">
+                       <p class="text-gray-500 text-lg">Elektron Pochta</p>
+                       <h2 class="text-xl lg:text-2xl font-bold text-white">
+                           info@stesting.uz
+                       </h2>
+                   </div>
+               
+                   <div class="mt-10">
+                       <p class="text-gray-500 text-lg">Telefon Raqami</p>
+                       <h2 class="text-xl lg:text-2xl font-bold pr-3 text-white">
+                           (71) 246-9393
+                       </h2>
+                   </div>
+               </div>
+               </div>
+    </div>
+      
+    </div>
+    <div class="bg-white mx-10"  >
+      <div class="containerr  block lg:flex items-center justify-between py-[22px]">
+        <div class="flex items-center gap-2.5">
+          <a href="https://www.uzedu.uz/uz">
+                <img src="./img/footer.svg" alt="maktabgacha_talim_vazirligi">
+            </a>
+            <a href="https://avloniy.uz/">
+               <img src="./img/abdullaavloniy.svg" alt="abdullaavloniy">
+            </a>
+        </div>
+        <div>
+            <ul class="hidden lg:flex items-center gap-4 ">
+              <li class="header_text transition">
+                <a href="./department.htm">
+                  Yo'riqnoma
+                </a>
+              </li>
+              <li class="header_text transition">
+                <a href="#">
+                  Nashirlar
+                </a>
+              </li>
+              <li class="header_text transition">
+                <a href="#">
+                  Videodarslar
+                </a>
+              </li>
+              <li class="header_text transition">
+                <a href="#">
+                  Tadqiqotlar
+                </a>
+              </li>
+              <li class="header_text transition">
+                <a href="">
+                  STesting haqida
+                </a>
+              </li>
+            </ul>
+        </div>
+    </div>
+    <span class="block border containerr">
+  
+    </span>
+    <div class="containerr  flex  gap-5 lg:mt-6 mb-[36px] flex items-center justify-between">
+        <div>
+            <p class="text-base text-[#73777d] font-semibold">
+                ©Stesting2024. All rights reserved
+            </p>
+        </div>
+        <div class="social-media flex gap-2">
+            
+        </div>
+        <div class="flex items-center gap-2">
+            <p class="text-base text-[#73777d] font-semibold">
+              Developed by
+            </p>
+            <a class="group flex items-center " target="_blank" href="https://uic.group/">
+                <img src="./img/uic.group.svg" alt="">
+        </div>
+    </div>
+    </div>
+    </footer>
+  
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./js/nashr.js"></script>
+</body>
+</html>
