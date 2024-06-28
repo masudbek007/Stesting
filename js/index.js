@@ -40,7 +40,7 @@ const dataBaza = (arr) => {
     div.setAttribute("class","w-full")
      div.innerHTML = `
     <div class="min-h-screen  flex mt-20">
-            <div class='  grid grid-cols-1 lg:grid-cols-2  gap-8 place-items-center'>
+            <div class=' lg:flex justfiy-between  place-items-center'>
             <div class=" pl-5 lg:text-left">
                 <h3 class="text-[30px] lg:text-[50px] text-slate-800 mt-[10px] font-bold">${arr.registration.title}</h3>
                 <p class="">${arr.registration.description}</p>
@@ -107,7 +107,7 @@ const dataBaza = (arr) => {
     <p class="mt-5 mx-5">
         Foydalanuvchilarga qulaylik yaratish maqsadida Stesting loyihasida videodarsliklar ham joylashtirilgan
     </p>
-    <a href="">
+    <a href="./research.htm">
         <button class="bg-blue-500 px-6 md:px-[50px] py-3 mt-5 transition mb-5 hover:bg-blue-600 font-semibold rounded-sm text-white">
             Barcha videodarslar
         </button>

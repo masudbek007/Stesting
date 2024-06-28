@@ -150,4 +150,12 @@
   .rounded-lg {
     border-radius: 0.5rem;
   }
-  
+  .select-animation {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.select-animation-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
