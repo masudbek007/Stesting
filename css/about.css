@@ -6,15 +6,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
-    background-color: #f9f9f9;
 }
 
 .block {
-    background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    padding: 20px;
 }
 
 
@@ -38,3 +34,48 @@ body {
 }
 
 
+.header_text a:hover {
+    border-bottom: 2px solid #0082F4;
+    padding-bottom: 10px;
+    color: #0082F4;
+
+}
+.heder_select:hover {
+    border-bottom: 2px solid #0082F4;
+    color: #0082F4;
+
+}
+/* Add this CSS to your stylesheet */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-container {
+    animation: fadeInContainer 1s ease-out;
+}
+
+.animate-image {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Delay for each image for staggered effect */
+.animate-image:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.animate-image:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.animate-image:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.animate-image:nth-child(4) {
+    animation-delay: 0.8s;
+}

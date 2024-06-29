@@ -2,7 +2,6 @@
 .container{
    margin: 0 auto;
     max-width: 1360px;
-    padding: 0 20px;
 }
 .container{
     
@@ -152,10 +151,12 @@
   }
   .select-animation {
     transform: translateY(-10px);
-    opacity: 0;
+    opacity: 1;
 }
 
 .select-animation-visible {
     transform: translateY(0);
     opacity: 1;
 }
+
+

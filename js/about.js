@@ -26,25 +26,50 @@ const bazaData = (arr) => {
     
     const div = document.createElement('div');
     div.innerHTML = `
-        <div class="block mt-20">
-            <div class=" z-20 grid 2xl:grid-rows-3 xl:grid-rows-3 lg:grid-rows-3 md:grid-rows-2 grid-flow-col gap-4 grid-default mt-5 ">
-            <div class="row-span-3 ms-20 2xl:block xl:block lg:block md:hidden sm:hidden">
-            <img class="border-[10px] border-white h-[432px] object-cover w-[254px]"
-                src="${arr.image_url}" alt="">
-            </div>
-        <div class="col-span-2 2xl:block xl:block lg:block md:hidden sm:hidden">
-            <img class="border-[10px] border-white h-[200px] object-cover w-[254px]"
-                src="${arr.image1_url}" alt="">
+    <div class="block mt-20">
+    <div class="z-20 hidden lg:grid grid-rows-3 md:grid-rows-2 grid-flow-col gap-4 mt-5">
+        <div class="row-span-3 ms-20 hidden md:block">
+            <img class="border-[10px] border-white h-[432px] object-cover w-[254px] animate-image"
+                src="${arr.image_url}" alt="qizbola">
         </div>
-        <div class="col-span-2 2xl:block xl:block lg:block md:hidden sm:hidden">
-            <img class="border-[10px] border-white h-[200px] object-cover w-[254px]"
-                src="${arr.image2_url}" alt="">
+        <div class="col-span-2 hidden md:block">
+            <img class="border-[10px] border-white h-[200px] object-cover w-[254px] animate-image"
+                src="${arr.image1_url}" alt="stesting">
         </div>
-        <div class="row-span-3  2xl:block xl:block lg:block md:hidden sm:hidden">
-            <img class="border-[10px] border-white h-[432px] object-cover w-[254px]"
-                src="${arr.image3_url}"
-                alt="">
+        <div class="col-span-2 hidden md:block">
+            <img class="border-[10px] border-white h-[200px] object-cover w-[254px] animate-image"
+                src="${arr.image2_url}" alt="stesting">
         </div>
+        <div class="row-span-3 hidden md:block">
+            <img class="border-[10px] border-white h-[432px] object-cover w-[254px] animate-image"
+                src="${arr.image3_url}" alt="stesting">
+        </div>
+        <!-- Responsive images for small screens -->
+        <div class="block md:hidden">
+            <img class="border-[10px] border-white h-auto object-cover w-full animate-image"
+                src="${arr.image_url}" alt="qizbola">
+        </div>
+        <div class="block md:hidden">
+            <img class="border-[10px] border-white h-auto object-cover w-full animate-image"
+                src="${arr.image1_url}" alt="stesting">
+        </div>
+        <div class="block md:hidden">
+            <img class="border-[10px] border-white h-auto object-cover w-full animate-image"
+                src="${arr.image2_url}" alt="stesting">
+        </div>
+        <div class="block md:hidden">
+            <img class="border-[10px] border-white h-auto object-cover w-full animate-image"
+                src="${arr.image3_url}" alt="stesting">
+        </div>
+    </div>
+    <div class="block md:hidden">
+        <img class="border-[10px] border-white h-auto object-cover w-full mb-4 animate-image" src="${arr.image_url}" alt="qizbola">
+        <img class="border-[10px] border-white h-auto object-cover w-full mb-4 animate-image" src="${arr.image1_url}" alt="stesting">
+        <img class="border-[10px] border-white h-auto object-cover w-full mb-4 animate-image" src="${arr.image2_url}" alt="stesting">
+        <img class="border-[10px] border-white h-auto object-cover w-full animate-image" src="${arr.image3_url}" alt="stesting">
+    </div>
+</div>
+
             </div>
             <div class="flex-col justify-between px-[15px] max-w[730px] mt-10 text-animation">
                 <h2 class="text-4xl mb-5 font-semibold">

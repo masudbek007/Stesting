@@ -65,7 +65,7 @@ const renderPublications = (publications) => {
         div.innerHTML = `
             <div class="block lg:flex gap-[44px] p-6 mt-5 mb-8 shadow">
                 <div>
-                    <img class="px-[15px] min-w-[200px]" src="${item.image_url}" alt="">
+                    <img class="px-[15px] min-w-[200px]" src="${item.image_url}" alt="bola">
                 </div>
                 <div class="flex-col justify-between px-[15px] max-w[730px]">
                     <h2 class="text-2xl font-semibold">

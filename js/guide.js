@@ -4,9 +4,8 @@ const elLoadingAnimation = document.querySelector('.animation');
 const elSelect = document.querySelector('.Nashr_select');
 const elStudentsBtn = document.querySelector('#students-btn');
 const elTeachersBtn = document.querySelector('#teachers-btn');
-const elAreaButton = document.querySelector('.area-button');  // elAreaButton elementini aniqlash
+const elAreaButton = document.querySelector('.area-button'); 
 const categories = new Set();
-const area = new Set();  // area to'plamini aniqlash
 let page = 1;
 let loading = false;
 let selectedCategory = '';
@@ -35,11 +34,13 @@ const requestPublications = () => {
             console.log(error);
         });
 };
+
 document.getElementById('hamburger-menu').addEventListener('click', function() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('translate-x-full');
     sidebar.classList.toggle('translate-x-0');
 });
+
 const renderPages = (totalPages) => {
     elFormBtnPagination.innerHTML = '';
     for (let i = 0; i < totalPages; i++) {
@@ -57,6 +58,8 @@ const changePage = (newPage) => {
 
 const renderPublications = (publications) => {
     elBoxList.innerHTML = '';
+    elAreaButton.innerHTML = "O'quvchilar uchun";  // Clear the area button container
+
     publications.forEach(item => {
         const div = document.createElement('div');
         div.innerHTML = `
@@ -73,7 +76,7 @@ const renderPublications = (publications) => {
                                 <p class="text-slate-300">${item.views}</p>
                             </div>
                             <div>
-                                <img class="w-5 mt-5 text-slate-300" src="../img/calendar.svg" alt="Koz">
+                                <img class="w-5 mt-5 text-slate-300" src="../img/calendar.svg" alt="data">
                                 <p class="text-slate-300">${item.date}</p>
                             </div>
                         </div>
@@ -87,12 +90,6 @@ const renderPublications = (publications) => {
             categories.add(item.direction);
             const optionHtml = `<option value="${item.direction}">${item.direction}</option>`;
             elSelect.insertAdjacentHTML('beforeend', optionHtml);
-        }
-        
-        if (!area.has(item.get_courses_display)) {
-            area.add(item.get_courses_display);
-            const areaButton = `<button>${item.get_courses_display}</button>`;
-            elAreaButton.insertAdjacentHTML('beforeend', areaButton);
         }
     });
 };

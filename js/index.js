@@ -1,7 +1,53 @@
+const headerSelect = document.querySelector('.header_select') 
+const container = document.querySelector('.container');
+const Stesting_baza = document.querySelector(".Stesting_loyihas");
+const StestinBlock = document.querySelector(".Stesting_tadqiqitlar");
+const StestinDarslar = document.querySelector(".video_darslar");
+// lang  querSelektrlar 
+
+
+const elLogin = document.querySelector('.login')
+const hederList = document.querySelector(".heder_list")
+const hederGuide = document.querySelector(".heder_guide")
+const hederVideo = document.querySelector(".heder_video")
+const hederResearch = document.querySelector(".heder_research")
+
+
+
+
+headerSelect.addEventListener('change', () => {
+    container.innerHTML = null
+    Stesting_baza.innerHTML = null
+    StestinBlock.innerHTML = null
+    StestinDarslar.innerHTML = null
+    Stesting()
+    if(headerSelect.value === 'uz'){
+        elLogin.textContent = uz.login
+        hederList.textContent = uz.guide
+        hederGuide.textContent = uz.publications
+    } else if(headerSelect.value === 'en'){
+        elLogin.textContent = en.login   
+        hederList.textContent = en.guide
+        hederGuide.textContent = en.publications
+
+     
+    } else if(headerSelect.value === 'ru'){
+        elLogin.textContent = ru.login
+        hederList.textContent = ru.guide
+        hederGuide.textContent = ru.publications
+
+        
+    }
+})
+
 const Stesting = () => {
     document.getElementById('loading-spinner').classList.remove('hidden');
     
-    fetch('https://qlapi.stesting.uz/api/v1/index/')
+    fetch('https://qlapi.stesting.uz/api/v1/index/', {
+        headers: {
+            'Accept-Language': headerSelect.value
+        }
+    })
         .then(res => {
             if (!res.ok) {
                 throw new Error('Network response was not ok');
@@ -27,10 +73,6 @@ document.getElementById('hamburger-menu').addEventListener('click', function() {
     sidebar.classList.toggle('translate-x-full');
     sidebar.classList.toggle('translate-x-0');
 });
-const container = document.querySelector('.container');
-const Stesting_baza = document.querySelector(".Stesting_loyihas");
-const StestinBlock = document.querySelector(".Stesting_tadqiqitlar");
-const StestinDarslar = document.querySelector(".video_darslar");
 
 const dataBaza = (arr) => {
     const div = document.createElement('div');
@@ -39,10 +81,10 @@ const dataBaza = (arr) => {
     const StestingVideoDarslar = document.createElement("ul");
     div.setAttribute("class","w-full")
      div.innerHTML = `
-    <div class="min-h-screen  flex mt-20">
-            <div class=' lg:flex justfiy-between  place-items-center'>
-            <div class=" pl-5 lg:text-left">
-                <h3 class="text-[30px] lg:text-[50px] text-slate-800 mt-[10px] font-bold">${arr.registration.title}</h3>
+    <div class="flex mt-30">
+            <div class='lg:flex justfiy-between  place-items-center'>
+            <div class="pl-5 lg:text-left">
+                <h3 class="text-[30px] lg:text-[50px] max-w-[500px] text-slate-800 mt-[10px] font-bold">${arr.registration.title}</h3>
                 <p class="">${arr.registration.description}</p>
                 <a href="${arr.registration.link}">
                     <button class="bg-[#4f95ff] px-[70px] mt-[30px] hover:bg-blue-700 rounded-sm text-white py-3">Video yoriqnoma</button>
@@ -60,7 +102,7 @@ const dataBaza = (arr) => {
     Stestin_wrap.innerHTML = `
         <div class=" block  lg:flex gap-10">
             <p class="about-stesting text-slate-800  bg-[#f8fbff] px-[40px] py-2 text-lg">${arr.short_description}</p>
-            <a class="" href="#">
+            <a class="" href="./about.htm">
                 <button class="mt-6 lg:mt-0 bg-blue-500 px-[50px] ml-5 transition hover:bg-blue-600 rounded-sm mr-10 fond-bold text-white py-2">Tafsilotlar</button>
             </a>
         </div>
@@ -84,7 +126,7 @@ const dataBaza = (arr) => {
               <p class = "  text-slate-300 ">${item.views}</p>
             </div>
             <div>
-              <img class=" w-5  mt-5  text-slate-300" src="../img/calendar.svg" alt="Koz">
+              <img class=" w-5  mt-5  text-slate-300" src="../img/calendar.svg" alt="data">
               <p class = "  text-slate-300 ">${item.date}</p>
             </div>
            </div>
@@ -99,7 +141,7 @@ const dataBaza = (arr) => {
     StestingVideoDarslar.innerHTML = `
     <div class= "block  lg:flex justify-around mt-3 mx-auto">
     
-      <iframe class= " max-w-[] mx-auto" src="${arr.main_video.video}" frameborder="0"></iframe>
+      <iframe class= "mx-auto" src="${arr.main_video.video}" frameborder="0"></iframe>
       <div class="dars_block flex flex-col items-center text-center mx-auto max-w-screen-md">
     <h2 class="text-3xl font-bold">
         Videodarslar
@@ -107,7 +149,7 @@ const dataBaza = (arr) => {
     <p class="mt-5 mx-5">
         Foydalanuvchilarga qulaylik yaratish maqsadida Stesting loyihasida videodarsliklar ham joylashtirilgan
     </p>
-    <a href="./research.htm">
+    <a href="./guide.htm">
         <button class="bg-blue-500 px-6 md:px-[50px] py-3 mt-5 transition mb-5 hover:bg-blue-600 font-semibold rounded-sm text-white">
             Barcha videodarslar
         </button>
