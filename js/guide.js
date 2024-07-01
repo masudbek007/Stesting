@@ -4,12 +4,20 @@ const elLoadingAnimation = document.querySelector('.animation');
 const elSelect = document.querySelector('.Nashr_select');
 const elStudentsBtn = document.querySelector('#students-btn');
 const elTeachersBtn = document.querySelector('#teachers-btn');
-const elAreaButton = document.querySelector('.area-button'); 
+const elAreaButton = document.querySelector('.area-button');
+const elModal = document.querySelector('.video-modal');
+const elModalContent = document.querySelector('.video-modal-content');
+const elModalClose = document.querySelector('.video-modal-close');
+const elModalPrev = document.querySelector('.video-modal-prev');
+const elModalNext = document.querySelector('.video-modal-next');
+
 const categories = new Set();
 let page = 1;
 let loading = false;
 let selectedCategory = '';
 let filter = '';
+let currentVideoIndex = 0;
+let publications = [];
 
 const requestPublications = () => {
     loading = true;
@@ -23,7 +31,8 @@ const requestPublications = () => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            renderPublications(data.results);
+            publications = data.results;
+            renderPublications(publications);
             renderPages(data.total_pages);
             loading = false;
             elLoadingAnimation.classList.add("hidden");
@@ -58,18 +67,18 @@ const changePage = (newPage) => {
 
 const renderPublications = (publications) => {
     elBoxList.innerHTML = '';
-    elAreaButton.innerHTML = "O'quvchilar uchun";  // Clear the area button container
+    elAreaButton.innerHTML = "O'quvchilar uchun";  
 
-    publications.forEach(item => {
+    publications.forEach((item, index) => {
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="mt-5">
-                <div class="lg:bg-white rounded-lg shadow-lg mt-5 p-6 max-w-sm cursor-pointer">
+                <div class="flex flex-col justify-between bg-white rounded-lg shadow-lg mt-5 p-6  cursor-pointer" data-index="${index}">
                     <div>
-                        <iframe class="w-full h-full" src="${item.video}" frameborder="0" allowfullscreen></iframe>
+                        <img class="" src="https://stesting.uz/_nuxt/img/videoCover.e3ce9ad.jpg" alt="STesting">
                     </div>
-                    <div class="mt-3 w-[200px]">
-                        <h2 class="font-bold text-base md:text-lg text-slate-800">${item.title}</h2>
+                    <div class="!grow mt-3  flex flex-col justify-between">
+                        <h2 class="line-clamp-1 font-bold text-base md:text-lg text-slate-800">${item.title}</h2>
                         <div class="flex justify-between align-center">
                             <div>
                                 <img class="w-5 mt-5 text-slate-300" src="../img/img.svg" alt="Koz">
@@ -91,7 +100,35 @@ const renderPublications = (publications) => {
             const optionHtml = `<option value="${item.direction}">${item.direction}</option>`;
             elSelect.insertAdjacentHTML('beforeend', optionHtml);
         }
+
+        div.querySelector('.cursor-pointer').addEventListener('click', () => {
+            openModal(index);
+        });
     });
+};
+
+const openModal = (index) => {
+    currentVideoIndex = index;
+    const video = publications[currentVideoIndex].video;
+    elModalContent.innerHTML = `<iframe src="${video}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    elModal.classList.remove('hidden');
+};
+
+const closeModal = () => {
+    elModal.classList.add('hidden');
+    elModalContent.innerHTML = '';
+};
+
+const showPrevVideo = () => {
+    if (currentVideoIndex > 0) {
+        openModal(currentVideoIndex - 1);
+    }
+};
+
+const showNextVideo = () => {
+    if (currentVideoIndex < publications.length - 1) {
+        openModal(currentVideoIndex + 1);
+    }
 };
 
 elSelect.addEventListener('change', () => {
@@ -111,6 +148,10 @@ elTeachersBtn.addEventListener('click', () => {
     page = 1;
     requestPublications();
 });
+
+elModalClose.addEventListener('click', closeModal);
+elModalPrev.addEventListener('click', showPrevVideo);
+elModalNext.addEventListener('click', showNextVideo);
 
 const addAllOption = () => {
     const allOption = `<option value="all">Barchasi</option>`;

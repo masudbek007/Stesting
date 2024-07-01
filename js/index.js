@@ -82,10 +82,10 @@ const dataBaza = (arr) => {
     div.setAttribute("class","w-full")
      div.innerHTML = `
     <div class="flex mt-30">
-            <div class='lg:flex justfiy-between  place-items-center'>
+            <div class='lg:flex justfiy-between  text-center  place-items-center'>
             <div class="pl-5 lg:text-left">
-                <h3 class="text-[30px] lg:text-[50px] max-w-[500px] text-slate-800 mt-[10px] font-bold">${arr.registration.title}</h3>
-                <p class="">${arr.registration.description}</p>
+                <h3 class="text-[30px]  lg:text-[50px] max-w-[500px] text-slate-800 mt-[10px] font-bold">${arr.registration.title}</h3>
+                <p>${arr.registration.description}</p>
                 <a href="${arr.registration.link}">
                     <button class="bg-[#4f95ff] px-[70px] mt-[30px] hover:bg-blue-700 rounded-sm text-white py-3">Video yoriqnoma</button>
                 </a>
@@ -100,10 +100,10 @@ const dataBaza = (arr) => {
     `;
     Stestin_wrap.setAttribute("class", "mt-[20px]");
     Stestin_wrap.innerHTML = `
-        <div class=" block  lg:flex gap-10">
-            <p class="about-stesting text-slate-800  bg-[#f8fbff] px-[40px] py-2 text-lg">${arr.short_description}</p>
-            <a class="" href="./about.htm">
-                <button class="mt-6 lg:mt-0 bg-blue-500 px-[50px] ml-5 transition hover:bg-blue-600 rounded-sm mr-10 fond-bold text-white py-2">Tafsilotlar</button>
+        <div class="block text-center lg:flex gap-10">
+            <p class="about-stesting text-slate-800 text-left  bg-[#f8fbff] px-[40px] py-2 text-lg">${arr.short_description}</p>
+            <a class="mx-auto" href="./about.htm">
+                <button class="mt-6 lg:mt-0 bg-blue-500 px-[50px]   transition hover:bg-blue-600 rounded-sm  fond-bold text-white py-2">Tafsilotlar</button>
             </a>
         </div>
     `;
@@ -114,19 +114,19 @@ const dataBaza = (arr) => {
         const researchDiv = document.createElement('li');
         researchDiv.setAttribute("class", "cursor-pointer");
         researchDiv.innerHTML = `
-        <div class = " lg: bg-white  rounded-lg shadow-lg mt-5 p-6 max-w-sm cursor-pointer ">
+        <div class = "lg:bg-white  rounded-lg shadow-lg mt-5 p-6 max-w-sm cursor-pointer ">
         <div>
            <img class="mr-5 w-full scale-100  aspect-img max-w-sm cursor-pointer transform transition-transform h-[130px] duration-300 hover:scale-105 " src="${item.image_url}" alt="STesting">
         </div>
            <div class ="mt-3 w-[200px]">
            <h2 class="font-bold line-clamp-1 text-base md:text-lg text-slate-800">${item.title}</h2>
-           <div class =  "flex justify-between align-center">
+           <div class ="flex justify-between align-center">
              <div>
-              <img class=" w-5  mt-5  text-slate-300" src="../img/img.svg" alt="Koz">
-              <p class = "  text-slate-300 ">${item.views}</p>
+              <img class=" w-5 mt-5  text-slate-300" src="../img/img.svg" alt="Koz">
+              <p class = " text-slate-300 ">${item.views}</p>
             </div>
             <div>
-              <img class=" w-5  mt-5  text-slate-300" src="../img/calendar.svg" alt="data">
+              <img class="w-5 mt-5 text-slate-300" src="../img/calendar.svg" alt="data">
               <p class = "  text-slate-300 ">${item.date}</p>
             </div>
            </div>
@@ -139,8 +139,7 @@ const dataBaza = (arr) => {
     });
 
     StestingVideoDarslar.innerHTML = `
-    <div class= "block  lg:flex justify-around mt-3 mx-auto">
-    
+    <div class= "block text-center lg:flex justify-around mt-3 mx-auto">
       <iframe class= "mx-auto" src="${arr.main_video.video}" frameborder="0"></iframe>
       <div class="dars_block flex flex-col items-center text-center mx-auto max-w-screen-md">
     <h2 class="text-3xl font-bold">

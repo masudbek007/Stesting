@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Videodarslar</title>
+    
 </head>
 <body>
   <header class="fixed z-50 top-0 w-[100%] bg-white shadow-sm" id="header">
@@ -15,7 +17,7 @@
                     <img src="./img/hamburger-menu.svg" alt="menu">
                 </div>
                 <a href="./index.htm">
-                    <img class="mr-5" src="https://qlapi.stesting.uz/media/Logo/Group_18754.png" alt="STesting">
+                    <img class="mr-5" src="./img/Stesting.svg" alt="STesting">
                 </a>
             </div>
             <ul class="hidden lg:flex gap-5 text-center pt-5 pb-3 bg-image-middle transition">
@@ -49,7 +51,7 @@
 <div id="sidebar" class="fixed top-0 right-0 h-full bg-white shadow-lg transform translate-x-full transition-transform lg:hidden z-50">
     <div class="p-5">
       <a href="./index.htm">
-        <img class="mb-5" src="https://qlapi.stesting.uz/media/Logo/Group_18754.png" alt="Stesting">
+        <img class="mb-5" src="./img/Stesting.svg" alt="Stesting">
       </a>
         <ul class="space-y-5">
             <li class="relative font-semibold transition-transform duration-300">
@@ -67,7 +69,7 @@
             <li class="relative font-semibold transition-transform duration-300">
                 <a href="./about.htm" class="hover-underline text-gray-800 hover:text-[#2a5ddd]">STesting haqida</a>
             </li>
-            <select class="header_select ml-5 transition mb-5 mt-5 font-semibold">
+            <select class="header_select  transition mb-5 mt-5 font-semibold">
                 <option value="uz">O'zbekcha</option>
                 <option value="ru">Ruscha</option>
                 <option value="eng">Ingilizcha</option>
@@ -90,19 +92,36 @@
                 </button>
               </div>
               <div class="block">
-                <select class="Nashr_select block py-2 w-full text-center mt-5 outline-none lg:mt-5 px-2">
+                <select class="Nashr_select block py-2 px-[10px]  transition transform outline-none border-sky-500 placeholder-sky-400 contrast-more:border-sky-400 select-animation focus:select-animation-visible hover:select-animation-visible py-2 w-full text-center mt-5 outline-none lg:mt-5 px-2">
                 </select>
               </div>
             </div>
           </div>
-          <div class="box-list lg:grid grid-cols-3 gap-5"></div>
+          <div class="box-list mx-5 lg:grid grid-cols-3 gap-5"></div>
+            <div class="video-modal hidden fixed mt-20 inset-0 bg-black bg-opacity-75 flex items-center justify-center">
+              <div class="relative bg-white rounded-lg shadow-lg">
+                <button class="video-modal-close absolute top-2 left-1/2 transform -translate-x-1/2">
+                  <i class="fas fa-times"></i>
+                </button>
+                <div class="video-modal-content"></div>
+                <button class="video-modal-prev absolute left-2 top-1/2 transform -translate-y-1/2">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="video-modal-next absolute right-2 top-1/2 transform -translate-y-1/2">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+
+        
           <div class="pagination-list mt-5"></div>
           <div class="animation hidden">Yuklanmoqda...</div>
         </div>
       </main>
   </main>
   <footer>
-    <div  class=" container bg-slate-900 bg-cover  w-full py-[44px] block lg:flex justify-between items-center mx-auto  ">
+    <div  class=" container bg-slate-900 bg-cover px-[15px]  w-full py-[44px] block lg:flex justify-between items-center mx-auto  ">
       
       <div class="block  lg:flex flex-row-reverse  max-w-[1024px] mx-auto">
         <div class="h-auto  mt-5  lg:w-full">
@@ -115,7 +134,7 @@
                     Toshkent shahri, Olmazor tumani, Ziyo koʻchasi, 6 uy
                 </h3>
             </div>
-               <div class="flex items-center justify-between mx-1 lg:block ">
+               <div class="flex items-center justify-between px-[15px] lg:block ">
                    <div class="mt-10 ">
                        <p class="text-gray-500 text-lg">Elektron Pochta</p>
                        <h2 class="text-xl lg:text-2xl font-bold text-white">

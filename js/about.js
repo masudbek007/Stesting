@@ -71,7 +71,7 @@ const bazaData = (arr) => {
 </div>
 
             </div>
-            <div class="flex-col justify-between px-[15px] max-w[730px] mt-10 text-animation">
+            <div class="flex-col justify-between px-[25px] max-w[730px] mt-10 text-animation">
                 <h2 class="text-4xl mb-5 font-semibold">
                     ${arr.title}
                 </h2>
