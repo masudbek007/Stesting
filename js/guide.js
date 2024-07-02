@@ -73,12 +73,12 @@ const renderPublications = (publications) => {
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="mt-5">
-                <div class="flex flex-col justify-between bg-white rounded-lg shadow-lg mt-5 p-6  cursor-pointer" data-index="${index}">
+                <div class="flex flex-col justify-between bg-white rounded-lg shadow-lg mt-5 p-6  cursor-pointer" data-index="${console.log(item.video)}}">
                     <div>
                         <img class="" src="https://stesting.uz/_nuxt/img/videoCover.e3ce9ad.jpg" alt="STesting">
                     </div>
                     <div class="!grow mt-3  flex flex-col justify-between">
-                        <h2 class="line-clamp-1 font-bold text-base md:text-lg text-slate-800">${item.title}</h2>
+                        <h2 class="line-clamp-1 font-bold text-base md:text-xl text-slate-800">${item.title}</h2>
                         <div class="flex justify-between align-center">
                             <div>
                                 <img class="w-5 mt-5 text-slate-300" src="../img/img.svg" alt="Koz">
